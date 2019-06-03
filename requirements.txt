@@ -1,0 +1,4 @@
+pika
+requests
+jsonschema
+beautifulsoup4

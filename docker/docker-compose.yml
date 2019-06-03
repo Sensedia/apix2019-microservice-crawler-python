@@ -1,0 +1,17 @@
+version: '3.6'
+services: 
+  apix2019-microservice-crawler-python:
+    image: sensedia/apix2019-microservice-crawler-python
+    container_name: crawler-python
+    environment:
+      RABBIT_SERVER: rabbitmq
+      RABBIT_KIT_QUEUE: apix-kit-queue
+      RABBIT_PRE_SPECIFICATION_QUEUE: apix-pre-specification-queue
+      RABBIT_RECOMMENDATION_QUEUE: apix-recommendation-queue
+      RABBIT_SUGGESTION_QUEUE: apix-suggestion-queue
+    networks:
+      - apix2019
+networks:
+  apix2019:
+    external:
+      name: apix2019infra_apix2019
